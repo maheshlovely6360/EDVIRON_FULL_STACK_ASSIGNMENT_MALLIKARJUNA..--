@@ -1,0 +1,75 @@
+.school-transactions-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .school-transactions-container h2 {
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .school-selector {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .school-selector select {
+    padding: 12px;
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: white;
+  }
+  
+  .transactions-table-container {
+    overflow-x: auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .no-transactions {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    background: #f8f9fa;
+    border-radius: 8px;
+  }
+  
+  .loading {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+  }
+  
+  .error-message {
+    color: #d32f2f;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .status-badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  
+  .status-badge.success {
+    background-color: #e6f4ea;
+    color: #1e7e34;
+  }
+  
+  .status-badge.pending {
+    background-color: #fff3e0;
+    color: #f57c00;
+  }
+  
+  .status-badge.failed {
+    background-color: #fde7e7;
+    color: #d32f2f;
+  }

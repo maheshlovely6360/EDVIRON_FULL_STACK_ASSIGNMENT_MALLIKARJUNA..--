@@ -1,0 +1,45 @@
+
+### 1. Fetch All Transactions
+GET http://localhost:3000/api/transactions
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0cnVzdGVlSWQiOiI2NWIwZTU1MmRkMzE5NTBhOWI0MWM1YmEiLCJJbmRleE9mQXBpS2V5Ijo2LCJpYXQiOjE3MTE2MjIyNzAsImV4cCI6MTc0MzE3OTg3MH0.Rye77Dp59GGxwCmwWekJHRj6edXWJnff9finjMhxKuw
+
+### 2. Fetch Transactions by School
+GET http://localhost:3000/api/transactions/school/65b0e6293e9f76a9694d84b4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0cnVzdGVlSWQiOiI2NWIwZTU1MmRkMzE5NTBhOWI0MWM1YmEiLCJJbmRleE9mQXBpS2V5Ijo2LCJpYXQiOjE3MTE2MjIyNzAsImV4cCI6MTc0MzE3OTg3MH0.Rye77Dp59GGxwCmwWekJHRj6edXWJnff9finjMhxKuw
+
+### 3. Check Transaction Status
+GET http://localhost:3000/api/transactions/status/ORD1234567890
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0cnVzdGVlSWQiOiI2NWIwZTU1MmRkMzE5NTBhOWI0MWM1YmEiLCJJbmRleE9mQXBpS2V5Ijo2LCJpYXQiOjE3MTE2MjIyNzAsImV4cCI6MTc0MzE3OTg3MH0.Rye77Dp59GGxwCmwWekJHRj6edXWJnff9finjMhxKuw
+
+### 4. Webhook for Status Updates
+POST http://localhost:3000/api/webhook/transaction-status
+Content-Type: application/json
+
+{
+    "status": 200,
+    "order_info": {
+        "order_id": "COL1234567890",
+        "order_amount": 2000,
+        "transaction_amount": 2200,
+        "gateway": "PhonePe",
+        "bank_reference": "YESBNK222"
+    }
+}
+
+### 5. Manual Status Update
+POST http://localhost:3000/api/transactions/COL1234567890/status
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0cnVzdGVlSWQiOiI2NWIwZTU1MmRkMzE5NTBhOWI0MWM1YmEiLCJJbmRleE9mQXBpS2V5Ijo2LCJpYXQiOjE3MTE2MjIyNzAsImV4cCI6MTc0MzE3OTg3MH0.Rye77Dp59GGxwCmwWekJHRj6edXWJnff9finjMhxKuw
+Content-Type: application/json
+
+{
+    "status": "SUCCESS"
+}
+
+### 6. Create Payment Transaction (Additional Task)
+POST http://localhost:3000/api/create-collect-request
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0cnVzdGVlSWQiOiI2NWIwZTU1MmRkMzE5NTBhOWI0MWM1YmEiLCJJbmRleE9mQXBpS2V5Ijo2LCJpYXQiOjE3MTE2MjIyNzAsImV4cCI6MTc0MzE3OTg3MH0.Rye77Dp59GGxwCmwWekJHRj6edXWJnff9finjMhxKuw
+Content-Type: application/json
+
+{
+    "school_id": "65b0e6293e9f76a9694d84b4"
+}
